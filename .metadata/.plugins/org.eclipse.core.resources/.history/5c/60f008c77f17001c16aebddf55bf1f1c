@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class aceptaelreto166 {
+	private static Scanner teclado;
+
+public static void main(String[] args) {
+	teclado = new Scanner(System.in);
+
+}
+}

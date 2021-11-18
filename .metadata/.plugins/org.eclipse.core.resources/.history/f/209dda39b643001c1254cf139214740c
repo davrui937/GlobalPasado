@@ -1,0 +1,39 @@
+package ejercicios;
+
+import java.io.*;
+
+public class Ejercicio_examen {
+	
+
+	FileReader reader = null;
+	BufferedReader buffer = null;
+
+	try {
+		File archivo = new File("C:\\Users\\AlumnoM\\Desktop\\enunciado.txt");
+		reader = new FileReader(archivo);
+		buffer = new BufferedReader(reader);
+
+		String linea;
+		while ((linea = buffer.readLine()) != null) {
+			linea=linea.toLowerCase();
+			linea=linea.replace(" ", "");
+			char[] aux = linea.toCharArray();
+			for (int i = 0; i < aux.length; i++) {
+
+				
+				if ((aux[i]=='a'||aux[i]=='e'||aux[i]=='i'||aux[i]=='o'||aux[i]=='u')) {
+					contv++;
+				} else {
+					contc++;
+				}
+			}
+
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	System.out.println("Hay un total de " + contv + " vocales y " + contc + " consonantes");
+
+
+}

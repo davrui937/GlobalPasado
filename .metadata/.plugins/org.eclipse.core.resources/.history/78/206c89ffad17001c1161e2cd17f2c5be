@@ -1,0 +1,28 @@
+package colecciones;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Listas {
+
+	public static void main(String[] args) {
+
+		LinkedList<String> ll = new LinkedList<String>();
+		
+		ll.add("amarillo");
+		ll.add("rojo");
+		ll.add("verde");
+		ll.add("naranja");
+
+		imprimirColeccion(ll);
+		
+	}
+	public static void imprimirColeccion(LinkedList ll) {
+		System.out.println(ll.size());
+		//Collections.reverse(ll);
+		for (int i =ll.size(); i <= 0 ; i--) {
+			System.out.println(ll.get(i));
+		}
+}
+}

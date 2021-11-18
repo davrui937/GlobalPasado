@@ -1,0 +1,14 @@
+package Pruebas;
+
+import java.util.Scanner;
+
+public class aceptaelreto293 {
+	private static Scanner teclado;
+
+	public static void main(String[] args) {
+	    teclado = new Scanner(System.in);
+
+	    int casos=0;
+	    
+	}
+}

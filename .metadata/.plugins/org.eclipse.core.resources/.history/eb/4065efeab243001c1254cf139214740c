@@ -1,0 +1,26 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Clase02_F {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		//Scanner teclado= new Scanner(System.in);
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		Connection conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/ejemplo?serverTimezone=UTC","root","afuera");
+	
+		Statement sentencia = conex.createStatement();
+		
+		String sql = String.format("select from dptos where id=%d",args);
+		ResultSet resul = sentencia.executeQuery(sql);
+
+		while(resul.next()) {
+			System.out.printf("%d \n", resul.getString(3));
+		}
+}
+}

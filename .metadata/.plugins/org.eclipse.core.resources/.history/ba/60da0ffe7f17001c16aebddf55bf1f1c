@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class aceptaelreto166 {
+	private static Scanner teclado;
+
+public static void main(String[] args) {
+	teclado = new Scanner(System.in);
+	int num1 = 0 ;
+	int num2 = 0;
+	
+	System.out.println("Introduce un canal");
+	num1=teclado.nextInt();
+	
+	System.out.println("Introduce otro canal");
+	num2=teclado.nextInt();
+	
+	
+}
+}

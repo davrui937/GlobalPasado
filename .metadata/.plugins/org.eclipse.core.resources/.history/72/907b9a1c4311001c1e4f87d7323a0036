@@ -1,0 +1,32 @@
+package Pruebas;
+
+import java.util.Scanner;
+
+public class aceptaelreto148 {
+	private static Scanner teclado;
+	static final int TAM2=2;
+	
+public static void main(String[] args) {
+	    teclado = new Scanner(System.in);
+	    String hora;
+	    int min=0;
+	   
+	    System.out.println("Inserta la hora:");
+				hora=teclado.nextLine();
+				
+			//hora= hora.replace(":"," ");
+				
+			int[] array = hora.toCharArray();
+			
+			Character.getNumericValue(array[1]);
+			
+			min=Character.getNumericValue(array[1])+Character.getNumericValue(array[1]);
+			
+			min=Character.getNumericValue(array[4])+Character.getNumericValue(array[5]);
+			
+			
+			System.out.println(min);
+			 
+	    
+	}
+}

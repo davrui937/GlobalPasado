@@ -1,0 +1,12 @@
+import java.sql.DriverManager;
+
+public class Clase01 {
+	public static void main(String[] args) throws ClassNotFoundException {
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		Connection conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/ejemplo?serverTimezone=UTC","root","afuera");
+		
+	}
+
+}

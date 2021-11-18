@@ -1,0 +1,88 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
+		Scanner teclado = new Scanner(System.in);
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		Connection conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/ejemplo?serverTimezone=UTC","root","afuera");
+	
+		Statement sentencia = conex.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+		
+		//result.previous() 
+		//result.last()
+		//result.beforeFirst()
+		//result.afterLast()
+		//result.getRow()
+		
+		
+		//Insertar un departamento
+		
+		
+		System.out.println("Inserta el id del nuevo departamento: ");
+		
+		int id = teclado.nextInt();
+		boolean bol=false;
+		
+		String sql = "select * from dptos";
+		
+		ResultSet resul = sentencia.executeQuery(sql);
+		
+		while(resul.next()) {
+			if(id==resul.getInt(1)){
+				bol= true;
+			}
+		}
+		
+	if(!bol) {
+		
+
+		System.out.println("Inserta el nombre del departamento: ");
+		String nom = teclado.nextInt();
+		
+		System.out.println("Inserta la letra del departamento: ");
+		int letra = teclado.nextInt();
+		
+		System.out.println("Inserta el numero doble del departamento: ");
+		int numdoble = teclado.nextInt();
+		
+		sql="begin;";
+		int valor=sentencia.executeUpdate(sql);
+		
+		
+		sql="insert into dptos values ("+id+", '"+nom+"','"+letra+"','"+numdoble+"');";
+		valor=sentencia.executeUpdate(sql);
+		
+		
+		sql = "select * from dptos";
+		resul = sentencia.executeQuery(sql);
+		while(resul.next()) {
+			System.out.printf("%d %s %s %.2f\n", resul.getInt(1), resul.getString(2),resul.getString(3),resul.getFloat(4));
+		}
+		
+	}
+	/*	sql="update dptos set bloque='G' where nom='contabilidad'";
+		int valor=sentencia.executeUpdate(sql);
+		
+		System.out.println("\nCambio la G por una E\n");
+		
+		sql = "select * from dptos";
+		resul = sentencia.executeQuery(sql);
+		while(resul.next()) {
+			System.out.printf("%d %s %s %.2f\n", resul.getInt(1), resul.getString(2),resul.getString(3),resul.getFloat(4));
+		}
+		
+		resul.close();
+		sentencia.close();
+		conex.close();*/
+	}
+}
+

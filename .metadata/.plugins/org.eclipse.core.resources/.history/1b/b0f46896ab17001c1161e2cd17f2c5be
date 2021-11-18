@@ -1,0 +1,10 @@
+package colecciones;
+
+import java.util.ArrayList;
+
+public class Ejercicios {
+	LinkedList al = new LinkedList();
+
+	
+	
+}

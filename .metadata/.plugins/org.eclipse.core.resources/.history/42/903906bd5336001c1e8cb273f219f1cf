@@ -1,0 +1,43 @@
+package ficheros;
+
+import java.io.*;
+import java.util.ArrayList;
+
+class ficheroExamen {
+	public static void main(String[] arg) {
+
+		File archivo = null;
+		FileReader reader = null;
+		BufferedReader buffer = null;
+		int contv = 0;
+		int contc = 0;
+
+		try {
+			archivo = new File("C:\\FichTexto.txt");
+			reader = new FileReader(archivo);
+			buffer = new BufferedReader(reader);
+
+			String linea;
+			while ((linea = buffer.readLine()) != null) {
+				linea=linea.toLowerCase();
+			s	linea.replace(" ", "");
+				char[] aux = linea.toCharArray();
+				for (int i = 0; i < aux.length; i++) {
+
+					//System.out.print(aux[i]);
+					if ((aux[i]=='a'||aux[i]=='e'||aux[i]=='i'||aux[i]=='o'||aux[i]=='u')) {
+						contv++;
+					} else {
+						contc++;
+					}
+				}
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Hay un total de " + contv + " vocales y " + contc + " consonantes");
+
+	}
+}

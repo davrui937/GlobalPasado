@@ -1,0 +1,45 @@
+package Pruebas;
+
+import java.util.Scanner;
+
+public class aceptaelreto148 {
+	private static Scanner teclado;
+	static final int TAM2=2;
+	
+public static void main(String[] args) {
+	    teclado = new Scanner(System.in);
+	    String hora;
+	    int min=0;
+	   
+	    System.out.println("Inserta la hora:");
+				hora=teclado.nextLine();
+				
+			//hora= hora.replace(":"," ");
+				
+			char[] array = hora.toCharArray();			
+			
+			System.out.println(array);
+			 
+	        int horas = Character.getNumericValue(array[0]);
+	        horas=horas*10;
+	        horas=horas+Character.getNumericValue(array[1]);
+	        
+	        System.out.println(horas);
+
+	        
+	        int minutos = Character.getNumericValue(array[3]);
+	        minutos=minutos*10;
+	        minutos=minutos+Character.getNumericValue(array[4]);
+	        
+	        System.out.println(minutos);
+	        
+	        
+	        minutos=minutos+(horas*60);
+	        
+	        System.out.println(minutos);
+	        
+	        minutos=minutos-1440;
+	        
+	        System.out.println("Faltan "+minutos+" para la medianoche.");
+	}
+}

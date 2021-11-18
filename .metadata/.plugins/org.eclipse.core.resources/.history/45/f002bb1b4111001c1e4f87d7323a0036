@@ -1,0 +1,21 @@
+package Pruebas;
+
+import java.util.Scanner;
+
+public class aceptaelreto148 {
+	private static Scanner teclado;
+	static final int TAM2=2;
+	
+public static void main(String[] args) {
+	    teclado = new Scanner(System.in);
+	    String hora;
+	   
+	    System.out.println("Inserta la hora:");
+				hora=teclado.nextLine();
+				
+			char[] array = hora.toCharArray();
+				
+			 
+	    
+	}
+}

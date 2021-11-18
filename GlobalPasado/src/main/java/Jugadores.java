@@ -1,2 +1,8 @@
-package PACKAGE_NAME;public class Jugadores {
+public class Jugadores extends Thread{
+        boolean bonus=false;
+
+    @Override
+    public void run() {
+        CampoBatalla.entrarPartida(this);
+    }
 }

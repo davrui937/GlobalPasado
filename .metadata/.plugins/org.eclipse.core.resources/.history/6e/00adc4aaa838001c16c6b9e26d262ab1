@@ -1,0 +1,49 @@
+package ficherosxml;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Attr;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Element;
+import org.w3c.dom.Text;
+import org.w3c.dom.*;
+
+public class FicherosIV {
+	public static void main(String[] args) throws ParserConfigurationException {
+
+		Element raiz, elem, elemSub;
+
+		Text text;
+
+		Attr attr;
+
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+		DocumentBuilder builder = factory.newDocumentBuilder();
+
+		DOMImplementation implement = builder.getDOMImplementation();
+		Document document = implement.createDocument(null, "Empleado", null); // creo el padre
+		document.setXmlVersion("1.0");
+
+		raiz = document.createElement("empleado"); // creo un nodo
+		document.getDocumentElement().appendChild(raiz);
+
+		elem = document.createElement("id");
+		text = document.createTextNode("1");
+		raiz.appendChild(elem);
+		elem.appendChild(text);
+		
+		elem = document.createElement("apellidos");
+		raiz.appendChild(elem);
+		attr = document.createAttribute("orden");
+		
+		
+
+		
+		
+		
+	}
+
+}

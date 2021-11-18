@@ -1,0 +1,29 @@
+package Pruebas;
+
+import java.util.Scanner;
+
+public class aceptaelreto293 {
+	private static Scanner teclado;
+
+	public static void main(String[] args) {
+	    teclado = new Scanner(System.in);
+
+	    int casos=0;
+	    int patas=0;
+	    
+	    System.out.println("Cuantos numeros de casos quieres: ");
+	    casos=teclado.nextInt();
+	    
+        int matriz[][] = new int[4][casos];
+        
+        for (int i = 0; i < matriz.length; i++) {
+			
+        	patas= matriz[0][i]*6;
+        	patas = patas+(matriz[1][i]*8);
+        	patas = patas+(matriz[2][i]*10);
+        	patas = patas +(matriz[3][i]*(matriz[4][i])*2);
+		}
+
+	    
+	}
+}

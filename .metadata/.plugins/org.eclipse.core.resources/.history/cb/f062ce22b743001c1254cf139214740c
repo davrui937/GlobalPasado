@@ -1,0 +1,52 @@
+package ejercicios;
+
+import java.io.*;
+
+
+public class Ejercicio_examen {
+	
+		public static void main(String[] arg) throws IOException {
+
+			File archivo = null;
+			FileReader reader = null;
+			BufferedReader buffer = null;
+			
+			File fichero = new File("FicheroRandom.dat");
+			
+			RandomAccessFile file = new RandomAccessFile(fichero, "rw");
+			
+
+			try {
+				archivo = new File("C:\\Users\\AlumnoM\\Desktop\\FicheroV.txt");
+				reader = new FileReader(archivo);
+				buffer = new BufferedReader(reader);
+
+				String linea="";
+				while ((linea = buffer.readLine()) != null) {
+					
+					System.out.println(linea);
+					for (int i = 0; i < 20; i++)
+						if (i < linea.length())
+							file.writeChar(linea.charAt(i));
+						else
+							file.writeChar(' ');
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			file.close();
+			
+			file = new RandomAccessFile(fichero, "rw");
+
+			while (file.getFilePointer() != file.length()) {
+				System.out.print(file.readInt() + " " + file.readInt() + " " + file.readBoolean());
+				System.out.print(" ");
+				for (int i = 0; i < 15; i++)
+					System.out.print(file.readChar());
+				System.out.println();
+
+			}
+			
+		}
+	}
